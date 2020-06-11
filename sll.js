@@ -56,6 +56,23 @@ class sll {
         }
         return this.head.value
     }
+    // Code for Contains Assignment
+    contains(val){
+        if (this.head === null){
+            console.log("This list is empty");
+            return this
+        } else {
+            let current = this.head;
+            while (current) {
+                if (current.value == val){
+                    console.log(`The value ${val}, does indeed exist`);
+                    return true
+                } else {
+                    current = current.next;
+                }
+            }
+        }
+    }
 
 }
 
@@ -68,3 +85,4 @@ list.display();
 list.removeFront();
 list.display();
 console.log(list.front());
+list.contains(32);
