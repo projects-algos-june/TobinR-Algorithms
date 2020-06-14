@@ -15,6 +15,7 @@ class sll {
         this.size = 0;
     }
 
+    // Code for Display assignment
     display(){
         let i = 0;
         let current = this.head;
