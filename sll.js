@@ -1,4 +1,4 @@
-// Tobin Risser's Fronts
+// Tobin Risser's Singly linked list
 
 // Add Front
 // Rudy isn’t nice: he cuts in line in front of everyone else. Given a pointer to the first ListNode and a value, create a new node, assign it to the list head, and return a pointer to the new head node.
@@ -71,6 +71,20 @@ class sll {
                     current = current.next;
                 }
             }
+            return this
+        }
+    }
+
+    // Code for length assignment
+    length(pointer){
+        if (this.head !== null){
+            let current = this.head;
+            let count = 1;
+            while (current) {
+                count++;
+                current = current.next;
+            }
+            return count
         }
     }
 
@@ -81,8 +95,12 @@ list.addFront(23);
 list.addFront(32);
 list.addFront(45);
 list.addFront(56);
+list.addFront(67);
+list.addFront(78);
+list.addFront(89);
 list.display();
 list.removeFront();
 list.display();
 console.log(list.front());
 list.contains(32);
+console.log(list.length())
