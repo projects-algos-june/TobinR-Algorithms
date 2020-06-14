@@ -89,9 +89,63 @@ class sll {
         }
     }
 
+    // Code for Max/Min/Average
+    max(){
+        if (this.head === null) {
+            console.log("This list is empty");
+            return this
+        } else {
+            let max = this.head.value;
+            let current = this.head;
+            while(current) {
+                if (current.value > max) {
+                    max = current.value;
+                }
+                // console.log(current.value);
+                current = current.next;
+                
+            }
+            return `${max} is the maximum value`
+        }
+    }
+
+    min(){
+        if (this.head === null) {
+            console.log("This list is empty");
+            return this
+        } else {
+            let min = this.head.value;
+            let current = this.head;
+            while(current){
+                if (current.value < min) {
+                    min = current.value;
+                }
+                // console.log(current.value)
+                current = current.next;
+            }
+            return `${min} is the minumum value`
+        }
+    }
+
+    average(){
+        if (this.head === null){
+            console.log("This list is empty");
+            return this
+        } else {
+            let total = 0;
+            let current = this.head;
+            while(current){
+                total += current.value;
+                current = current.next;
+            }
+            return total/list.length()
+        }
+    }
+
 }
 
 var list = new sll();
+list.addFront(9);
 list.addFront(23);
 list.addFront(32);
 list.addFront(45);
@@ -99,9 +153,13 @@ list.addFront(56);
 list.addFront(67);
 list.addFront(78);
 list.addFront(89);
-list.display();
-list.removeFront();
-list.display();
-console.log(list.front());
-list.contains(32);
-console.log(list.length())
+list.addFront(12);
+// list.display();
+// list.removeFront();
+// list.display();
+// console.log(list.front());
+// list.contains(32);
+// console.log(list.length());
+console.log(list.max());
+console.log(list.min());
+console.log(list.average());
