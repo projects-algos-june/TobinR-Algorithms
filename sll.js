@@ -138,7 +138,58 @@ class sll {
                 total += current.value;
                 current = current.next;
             }
-            return total/list.length()
+            return `${total/list.length()} is the avaerage value of this list`
+        }
+    }
+
+
+    // Code for Back/Remove/Add
+    back(){
+        if (this.head === null){
+            console.log("This list is empty");
+            return this
+        } else {
+            let current = this.head;
+            while (current) {
+                if (current.next == null) {
+                    return current.value
+                }
+                current = current.next;
+            }
+            return this
+        }
+    }
+
+    removeBack(){
+        if (this.head === null){
+            console.log("This list is empty");
+            return this
+        } else {
+            let current = this.head;
+            while (current) {
+                if (current.next.next == null) {
+                    current.next = null;
+                }
+                current = current.next
+            }
+            return this
+        }
+    }
+
+    addBack(value){
+        if (this.head === null){
+            this.head = value;
+            this.head.next = new Node();
+        } else {
+            let current = this.head;
+            while(current){
+                if(current.next == null){
+                    current.next = new Node(value);
+                    return this
+                }
+                current = current.next;
+            }
+            return this
         }
     }
 
@@ -154,7 +205,7 @@ list.addFront(67);
 list.addFront(78);
 list.addFront(89);
 list.addFront(12);
-// list.display();
+list.display();
 // list.removeFront();
 // list.display();
 // console.log(list.front());
@@ -163,3 +214,7 @@ list.addFront(12);
 console.log(list.max());
 console.log(list.min());
 console.log(list.average());
+console.log(list.back());
+list.removeBack();
+list.addBack(123);
+list.display();
