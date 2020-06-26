@@ -127,6 +127,33 @@ class sll {
         }
     }
 
+  /*   minToFront(){
+        if (this.head === null){
+            console.log("This list is empty")
+            return this
+        } else {
+            let min = this.head.value;
+            let min_idx = this.head;
+            let current = this.head;
+            while(current){
+                if (current.value < min){
+                    min = current.value;
+                    min_idx = current;
+                }
+                current = current.next;
+        }
+        if(min_idx == this.head){
+            return this
+        } else {
+            let temp = this.head;
+            this.head = min_idx;
+            this.head.next = temp;
+        }
+        console.log(min_idx)
+        return `${this.head.value} is now the head`
+        }
+    } */
+
     average(){
         if (this.head === null){
             console.log("This list is empty");
@@ -193,9 +220,40 @@ class sll {
         }
     }
 
+// Code for To Do 2 Assignment
+    secondToLast(){
+        if(this.head === null){
+            console.log("This list is empty");
+        }
+        if(this.size < 2){
+            console.log("Second to last is null");
+        } else {
+            let current = this.head;
+            while(current.next.next){
+                current = current.next;
+            }
+            return current.value
+        }
+    }
+
+    copy(){
+        if(this.head === null){
+            console.log("This list is empty");
+        } else {
+            let copy = new sll();
+            let runner = this.head;
+            copy.head = new Node(runner);
+            while(runner){
+                
+            }
+            return copy
+        }
+    }
+
 }
 
 var list = new sll();
+list.addFront(13);
 list.addFront(9);
 list.addFront(23);
 list.addFront(32);
@@ -205,16 +263,19 @@ list.addFront(67);
 list.addFront(78);
 list.addFront(89);
 list.addFront(12);
-list.display();
+// list.display();
 // list.removeFront();
 // list.display();
 // console.log(list.front());
 // list.contains(32);
 // console.log(list.length());
-console.log(list.max());
-console.log(list.min());
-console.log(list.average());
-console.log(list.back());
-list.removeBack();
-list.addBack(123);
+// console.log(list.max());
+// console.log(list.min());
+// console.log(list.average());
+// console.log(list.back());
+// list.removeBack();
+// list.addBack(123);
+// list.minToFront();
 list.display();
+console.log(list.secondToLast());
+console.log(list.copy());
